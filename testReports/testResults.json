@@ -2,14 +2,14 @@
   "stats": {
     "suites": 2,
     "tests": 3,
-    "passes": 2,
+    "passes": 3,
     "pending": 0,
-    "failures": 1,
-    "start": "2022-08-12T13:54:13.885Z",
-    "end": "2022-08-12T13:54:17.034Z",
-    "duration": 3149,
+    "failures": 0,
+    "start": "2022-08-12T16:55:47.538Z",
+    "end": "2022-08-12T16:56:11.818Z",
+    "duration": 24280,
     "testsRegistered": 3,
-    "passPercent": 66.66666666666666,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "57f7ff69-a04c-45a8-be24-fd2c4d2628fe",
+      "uuid": "d332b061-e73f-4908-b6f8-7ecc5ccf45c7",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "01069a77-9b4b-4699-8846-fc933dcce171",
+          "uuid": "cf5bb6ef-ef30-4f22-8223-ab910b3abd5e",
           "title": "Add new todo ",
           "fullFile": "/home/prabhakar/Coding/testing/lambda-test-YT/test/firstTest.js",
           "file": "/test/firstTest.js",
@@ -38,7 +38,7 @@
               "title": "successfully add a new todo",
               "fullTitle": "Add new todo  successfully add a new todo",
               "timedOut": null,
-              "duration": 1434,
+              "duration": 1268,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,7 +47,7 @@
               "context": null,
               "code": "var driver = new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\ndriver.sleep(2000);\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"buy milk\", Key.RETURN);\ndriver.sleep(2000);\n//assert\n// const testFromTest = await driver\n//   .findElement(By.xpath(\"//li[last()]\"))\n//   .getText()\n//   .then((value) => {\n//     return value;\n//   });\n//node assert\n// await assert.strictEqual(testFromTest, \"buy milk\");\n//chai assert\n// testFromTest.should.equal(\"cookie and milk\");\nawait driver.quit();",
               "err": {},
-              "uuid": "985f5911-1e55-4311-85a9-5d448b851bf8",
+              "uuid": "58b9ca23-b927-41ca-9693-93cf2b4c8cde",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -55,60 +55,94 @@
           ],
           "suites": [],
           "passes": [
-            "985f5911-1e55-4311-85a9-5d448b851bf8"
+            "58b9ca23-b927-41ca-9693-93cf2b4c8cde"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1434,
+          "duration": 1268,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
         },
         {
-          "uuid": "4f2e2e02-7568-41a4-85b3-c8031da3fb41",
+          "uuid": "fd98e92d-ba93-428a-8355-80cf99ffab2f",
           "title": "Add another new todo ",
           "fullFile": "/home/prabhakar/Coding/testing/lambda-test-YT/test/secondTest.js",
           "file": "/test/secondTest.js",
-          "beforeHooks": [],
-          "afterHooks": [],
+          "beforeHooks": [
+            {
+              "title": "\"before each\" hook in \"Add another new todo \"",
+              "fullTitle": "Add another new todo  \"before each\" hook in \"Add another new todo \"",
+              "timedOut": null,
+              "duration": 1,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "driver = new Builder()\n  .usingServer(gridUrl)\n  .withCapabilities(capabilities)\n  .build();\n// driver = new Builder().forBrowser(\"chrome\").build();",
+              "err": {},
+              "uuid": "7c25d3ff-9f01-403c-8bbe-be8c8aed6a73",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after each\" hook in \"Add another new todo \"",
+              "fullTitle": "Add another new todo  \"after each\" hook in \"Add another new todo \"",
+              "timedOut": null,
+              "duration": 735,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "0ad16ac6-fdf1-4da3-b279-d2231a8a5865",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
           "tests": [
             {
               "title": "successfully add another new todo",
               "fullTitle": "Add another new todo  successfully add another new todo",
               "timedOut": null,
-              "duration": 1578,
+              "duration": 11027,
               "state": "passed",
               "speed": "slow",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
-              "code": "var driver = new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\ndriver.sleep(2000);\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"buy milk\", Key.RETURN);\ndriver.sleep(2000);\nawait driver.quit();",
+              "code": "await driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"buy milk\", Key.RETURN);\nconst testFromTest = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\n//chai assert\ntestFromTest.should.equal(\"buy milk\");",
               "err": {},
-              "uuid": "f653731e-9e2b-4f91-adbf-11c7235bca70",
+              "uuid": "f9b106ef-aa7d-4a84-9d24-416e11f99323",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
             },
             {
-              "title": "successfully add another new todo",
-              "fullTitle": "Add another new todo  successfully add another new todo",
+              "title": "adding a new test for reposting",
+              "fullTitle": "Add another new todo  adding a new test for reposting",
               "timedOut": null,
-              "duration": 1286,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 11632,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "var driver = new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\nconst testFromTest = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\n//chai assert\ntestFromTest.should.equal(\"cookie and milk\");\nawait driver.quit();",
-              "err": {
-                "message": "AssertionError: expected 'Fifth Item' to equal 'cookie and milk'",
-                "estack": "AssertionError: expected 'Fifth Item' to equal 'cookie and milk'\n    at Context.<anonymous> (test/secondTest.js:28:25)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)",
-                "diff": "- Fifth Item\n+ cookie and milk\n"
-              },
-              "uuid": "bad11ad4-6c88-4eda-8fc2-96d998d83d67",
+              "code": "await driver.get(\"https://lambdatest.github.io/sample-todo-app/\");\nawait driver\n  .findElement(By.id(\"sampletodotext\"))\n  .sendKeys(\"buy cookie\", Key.RETURN);\nconst testFromTest = await driver\n  .findElement(By.xpath(\"//li[last()]\"))\n  .getText()\n  .then((value) => {\n    return value;\n  });\n//chai assert\ntestFromTest.should.equal(\"buy cookie\");",
+              "err": {},
+              "uuid": "227ac8b6-4929-4318-bd53-af1781329313",
               "parentUUID": null,
               "isHook": false,
               "skipped": false
@@ -116,14 +150,13 @@
           ],
           "suites": [],
           "passes": [
-            "f653731e-9e2b-4f91-adbf-11c7235bca70"
+            "f9b106ef-aa7d-4a84-9d24-416e11f99323",
+            "227ac8b6-4929-4318-bd53-af1781329313"
           ],
-          "failures": [
-            "bad11ad4-6c88-4eda-8fc2-96d998d83d67"
-          ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2864,
+          "duration": 22659,
           "root": false,
           "rootEmpty": false,
           "_timeout": null
